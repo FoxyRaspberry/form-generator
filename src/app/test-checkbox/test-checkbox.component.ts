@@ -1,12 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
+  providers: [
+    {
+      multi: true,
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => TestCheckboxComponent),
+    },
+  ],
+  imports: [FormsModule],
   selector: 'app-test-checkbox',
   standalone: true,
-  imports: [],
+  styleUrl: './test-checkbox.component.scss',
   templateUrl: './test-checkbox.component.html',
-  styleUrl: './test-checkbox.component.scss'
 })
-export class TestCheckboxComponent {
+export class TestCheckboxComponent implements ControlValueAccessor {
+  protected disabled = false;
 
+  private onChange: (value: boolean) => void = () => { };
+  private onTouched: () => void = () => { };
+  private booleanValueInternal: boolean = false;
+
+  protected get value(): boolean {
+    return this.booleanValueInternal;
+  }
+
+  protected set value(value: boolean) {
+    this.writeValue(value);
+  }
+
+  public registerOnChange(fn: (value: boolean) => void): void {
+    this.onChange = fn;
+  }
+
+  public registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  public setDisabledState(disabled: boolean): void {
+    this.disabled = disabled;
+  }
+
+  public writeValue(value: boolean | null): void {
+    if (value === null) {
+      return;
+    }
+
+    this.booleanValueInternal = value;
+    this.onChange(this.booleanValueInternal);
+  }
 }
