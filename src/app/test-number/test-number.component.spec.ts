@@ -1,23 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TestNumberComponent } from './test-number.component';
 
-describe('TestNumberComponent', () => {
+describe('TestNumberComponent', (): void => {
   let component: TestNumberComponent;
   let fixture: ComponentFixture<TestNumberComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async (): Promise<void> => {
     await TestBed.configureTestingModule({
-      imports: [TestNumberComponent]
+      imports: [TestNumberComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TestNumberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', (): void => {
     expect(component).toBeTruthy();
   });
 });
