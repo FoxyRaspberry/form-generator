@@ -1,5 +1,12 @@
-<select [(ngModel)]="value" [disabled]="disabled">
-  @for (item of options; track item.value) {
-    <option [value]="item.value">{{item.title}}</option>
+<label>
+  {{label}}
+  @if (required) {
+    *
   }
-</select>
+  <select [(ngModel)]="value" [disabled]="disabled" [required]="required">
+    @for (item of options; track item.value) {
+    <option [value]="item.value">{{item.title}}</option>
+    }
+  </select>
+  {{description}}
+</label>

@@ -17,6 +17,9 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
 })
 export class TestSelectComponent implements ControlValueAccessor {
   @Input({ required: true }) public options: readonly TestSelectOption[] = [];
+  @Input() public description = '';
+  @Input({ required: true }) public label = '';
+  @Input() public required = false;
 
   protected disabled = false;
 
