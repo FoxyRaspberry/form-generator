@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -16,6 +16,10 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
   templateUrl: './test-number.component.html',
 })
 export class TestNumberComponent implements ControlValueAccessor {
+  @Input() public description = '';
+  @Input({ required: true }) public label = '';
+  @Input() public required = false;
+  
   protected disabled = false;
 
   private onChange: (value: number) => void = () => {};
