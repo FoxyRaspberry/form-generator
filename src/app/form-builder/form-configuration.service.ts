@@ -20,6 +20,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
       label: 'la',
       required: false,
     },
+    value: 1,
   },
   {
     id: 'qw1',
@@ -29,6 +30,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
       label: 'la',
       required: true,
     },
+    value: 2,
   },
   {
     id: 'qw2',
@@ -56,6 +58,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
         },
       ],
     },
+    value: 'SPB',
   },
   {
     id: 'qw3',
@@ -83,6 +86,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
         },
       ],
     },
+    value: 'BEG',
   },
   {
     id: 'qw4',
@@ -92,6 +96,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
       label: 'la',
       required: false,
     },
+    value: 'Имя',
   },
   {
     id: 'qw5',
@@ -101,6 +106,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
       label: 'la',
       required: true,
     },
+    value: 'Имя2',
   },
   {
     id: 'qw6',
@@ -110,6 +116,7 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
       label: 'la',
       required: false,
     },
+    value: false,
   },
   {
     id: 'qw7',
@@ -119,5 +126,6 @@ const formConfigurationExample: readonly FormConfigurationItem[] = [
       label: 'la',
       required: true,
     },
+    value: false,
   },
 ];

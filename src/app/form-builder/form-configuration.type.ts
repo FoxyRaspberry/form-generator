@@ -8,6 +8,7 @@ interface FormTextboxConfiguration {
   readonly id: string;
   readonly kind: 'textbox';
   readonly parameters: FormTextboxConfigurationParameters;
+  readonly value: string;
 }
 
 interface FormTextboxConfigurationParameters {
@@ -21,6 +22,7 @@ interface FormCheckboxConfiguration {
   readonly id: string;
   readonly kind: 'checkbox';
   readonly parameters: FormCheckboxConfigurationParameters;
+  readonly value: boolean;
 }
 
 interface FormCheckboxConfigurationParameters {
@@ -34,6 +36,7 @@ interface FormInputNumberConfiguration {
   readonly id: string;
   readonly kind: 'inputNumber';
   readonly parameters: FormInputNumberConfigurationParameters;
+  readonly value: number;
 }
 
 interface FormInputNumberConfigurationParameters {
@@ -47,6 +50,7 @@ interface FormDropdownListConfiguration {
   readonly id: string;
   readonly kind: 'dropdownList';
   readonly parameters: FormDropdownListConfigurationParameters;
+  readonly value: string;
 }
 
 interface FormDropdownListConfigurationParameters {
