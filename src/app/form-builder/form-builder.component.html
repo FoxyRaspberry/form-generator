@@ -1,0 +1,38 @@
+<form [formGroup]="builtForm" (ngSubmit)="formSubmitHandler()">
+  @for (configurationItem of formConfiguration; track configurationItem.id) {
+    @if (configurationItem.kind === 'textbox') {
+      <app-test-input
+        [description]="configurationItem.parameters.description"
+        [formControlName]="configurationItem.id"
+        [label]="configurationItem.parameters.label"
+        [required]="configurationItem.parameters.required"
+      />
+    }
+    @else if (configurationItem.kind === 'checkbox') {
+      <app-test-checkbox
+        [description]="configurationItem.parameters.description"
+        [formControlName]="configurationItem.id"
+        [label]="configurationItem.parameters.label"
+        [required]="configurationItem.parameters.required"
+      />
+    }
+    @else if (configurationItem.kind === 'inputNumber') {
+      <app-test-number
+        [description]="configurationItem.parameters.description"
+        [formControlName]="configurationItem.id"
+        [label]="configurationItem.parameters.label"
+        [required]="configurationItem.parameters.required"
+      />
+    }
+    @else if (configurationItem.kind === 'dropdownList') {
+      <app-test-select
+        [description]="configurationItem.parameters.description"
+        [formControlName]="configurationItem.id"
+        [label]="configurationItem.parameters.label"
+        [options]="configurationItem.parameters.options"
+        [required]="configurationItem.parameters.required"
+      />
+    }
+  }
+  <button type="submit">Отправить</button>
+</form>
