@@ -5,8 +5,8 @@ import { TestCheckboxComponent } from '../test-checkbox/test-checkbox.component'
 import { TestInputComponent } from '../test-input/test-input.component';
 import { TestNumberComponent } from '../test-number/test-number.component';
 import { TestSelectComponent } from '../test-select/test-select.component';
-import { FormConfigurationService } from './form-configuration.service';
-import type { FormConfigurationItem } from './form-configuration.type';
+import { FormConfigurationService } from '../../form-manager/form-configuration.service';
+import type { FormConfigurationItem } from '../../form-manager/form-configuration.type';
 
 @Component({
   imports: [
