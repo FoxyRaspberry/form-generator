@@ -6,8 +6,14 @@ import { of, type Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FormConfigurationService {
+  private formConfiguration: readonly FormConfigurationItem[] = formConfigurationExample;
+
   public readConfiguration(): Observable<readonly FormConfigurationItem[]> {
-    return of(formConfigurationExample);
+    return of(this.formConfiguration);
+  }
+
+  public setConfiguration(formConfiguration: readonly FormConfigurationItem[]): void {
+    this.formConfiguration = formConfiguration;
   }
 }
 
