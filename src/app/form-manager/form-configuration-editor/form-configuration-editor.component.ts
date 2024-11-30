@@ -21,7 +21,7 @@ export class FormConfigurationEditorComponent implements OnInit {
     this.formConfigurationService.readConfiguration()
     .pipe(takeUntilDestroyed(this.destroyRef))
     .subscribe((formConfiguration): void => {
-      this.formConfigurationJSON = JSON.stringify(formConfiguration);
+      this.formConfigurationJSON = JSON.stringify(formConfiguration, null, 2);
     });
   }
 
