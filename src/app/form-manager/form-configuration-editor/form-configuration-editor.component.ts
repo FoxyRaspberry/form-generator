@@ -20,13 +20,17 @@ export class FormConfigurationEditorComponent implements OnInit {
   public ngOnInit(): void {
     this.formConfigurationService.readConfiguration()
     .pipe(takeUntilDestroyed(this.destroyRef))
-    .subscribe((formConfiguration): void =>{
+    .subscribe((formConfiguration): void => {
       this.formConfigurationJSON = JSON.stringify(formConfiguration);
     });
   }
 
   protected buttonClickHandler(): void {
-    const formConfiguration = JSON.parse(this.formConfigurationJSON);
-    this.formConfigurationService.setConfiguration(formConfiguration);
+    try {
+      const formConfiguration = JSON.parse(this.formConfigurationJSON);
+      this.formConfigurationService.setConfiguration(formConfiguration);
+    } catch (error) {
+      alert('Не удалось распознать конфигурацию. Исправьте JSON.');
+    }
   }
 }
