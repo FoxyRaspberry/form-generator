@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, type Observable } from 'rxjs';
 import type { FormConfigurationItem } from './form-configuration.type';
-import { of, type Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormConfigurationService {
-  private formConfiguration: readonly FormConfigurationItem[] = formConfigurationExample;
+  private formConfiguration = new BehaviorSubject<readonly FormConfigurationItem[]>(formConfigurationExample);
 
   public readConfiguration(): Observable<readonly FormConfigurationItem[]> {
-    return of(this.formConfiguration);
+    return this.formConfiguration.asObservable();
   }
 
   public setConfiguration(formConfiguration: readonly FormConfigurationItem[]): void {
-    this.formConfiguration = formConfiguration;
+    this.formConfiguration.next(formConfiguration);
   }
 }
 
