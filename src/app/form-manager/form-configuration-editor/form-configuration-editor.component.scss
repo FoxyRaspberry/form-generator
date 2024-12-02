@@ -1,3 +1,49 @@
 :host {
   display: block;
 }
+
+.app-form-configuration-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  background-color: #1A1A1D;
+}
+
+.app-form-configuration-editor__header {
+  color: white;
+}
+
+.app-form-configuration-editor__textarea {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 17px;
+  line-height: 27px;
+  background-color: #1A1A1D;
+  border: 1px solid #6A1E55;
+  color: #A64D79;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #6A1E55;
+  }
+}
+
+
+.app-form-configuration-editor__create-button {
+  width: 139px;
+  height: 52px;
+  background-color: #A64D79;
+  border: 1px solid #A64D79;
+  color: #1A1A1D;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #6A1E55;
+    border: 1px solid #6A1E55;
+    color: #A64D79;
+  }
+}
