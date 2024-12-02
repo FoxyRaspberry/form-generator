@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  font-family: "Dela Gothic One", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
