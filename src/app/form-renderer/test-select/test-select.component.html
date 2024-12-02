@@ -1,12 +1,21 @@
-<label>
-  {{label}}
-  @if (required) {
-    *
-  }
-  <select [(ngModel)]="value" [disabled]="disabled" [required]="required">
+<label class="app-test-select">
+  <span class="app-test-select__label">
+    {{label}}
+    @if (required) {
+      <span class="app-test-select__required">*</span>
+    }
+  </span>
+  <select
+    class="app-test-select__dropdown"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    [required]="required"
+  >
     @for (item of options; track item.value) {
-    <option [value]="item.value">{{item.title}}</option>
+      <option [value]="item.value">{{item.title}}</option>
     }
   </select>
-  {{description}}
+  <div class="app-test-select__description">
+    {{description}}
+  </div>
 </label>

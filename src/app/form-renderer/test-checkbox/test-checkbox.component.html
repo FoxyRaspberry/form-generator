@@ -1,8 +1,20 @@
-<label>
-  {{label}}
-  @if (required) {
-    *
-  }
-  <input type="checkbox" [(ngModel)]="value" [disabled]="disabled" [required]="required">
-  {{description}}
+<label class="app-test-checkbox">
+  <div class="app-test-checkbox__input-and-label-container">
+    <input
+      class="app-test-checkbox__input"
+      [(ngModel)]="value"
+      [disabled]="disabled"
+      [required]="required"
+      type="checkbox"
+    >
+    <span class="app-test-checkbox__label">
+      @if (required) {
+        <span class="app-test-checkbox__required">*</span>
+      }
+      {{label}}
+    </span>
+  </div>
+  <div class="app-test-checkbox__description">
+    {{description}}
+  </div>
 </label>

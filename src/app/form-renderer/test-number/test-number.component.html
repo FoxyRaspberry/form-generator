@@ -1,8 +1,18 @@
-<label>
-  {{label}}
-  @if (required) {
-    *
-  }
-  <input type="number" [(ngModel)]="value" [disabled]="disabled" [required]="required">
-  {{description}}
+<label class="app-test-number">
+  <span class="app-test-number__label">
+    {{label}}
+    @if (required) {
+      <span class="app-test-number__required">*</span>
+    }
+  </span>
+  <input
+    class="app-test-number__input"
+    [(ngModel)]="value"
+    [disabled]="disabled"
+    [required]="required"
+    type="number"
+  >
+  <div class="app-test-number__description">
+    {{description}}
+  </div>
 </label>
