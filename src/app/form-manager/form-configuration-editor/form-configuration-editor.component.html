@@ -1,5 +1,15 @@
-<section>
-  <h1>Создай свою форму!</h1>
-  <textarea [(ngModel)]="formConfigurationJSON" cols="30" rows="10"></textarea>
-  <button (click)="buttonClickHandler()">Создать</button>
+<section class="app-form-configuration-editor">
+  <h1 class="app-form-configuration-editor__header">Создай свою форму!</h1>
+  <textarea
+    class="app-form-configuration-editor__textarea"
+    [(ngModel)]="formConfigurationJSON"
+    cols="40"
+    rows="30"
+  ></textarea>
+  <button
+    class="app-form-configuration-editor__create-button"
+    (click)="buttonClickHandler()"
+  >
+    Создать
+  </button>
 </section>

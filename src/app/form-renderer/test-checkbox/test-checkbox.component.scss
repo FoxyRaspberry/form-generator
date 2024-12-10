@@ -1,3 +1,37 @@
 :host {
   display: block;
 }
+
+.app-test-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-test-checkbox__input-and-label-container {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.app-test-checkbox__label {
+  font-size: 17px;
+  line-height: 22px;
+  color: white;
+}
+
+.app-test-checkbox__required {
+  font-size: 20px;
+  color: #A64D79;
+}
+
+.app-test-checkbox__input {
+  width: 22px;
+  height: 22px;
+  accent-color: #A64D79;
+}
+
+.app-test-checkbox__description {
+  font-size: 12px;
+  color: white;
+}
