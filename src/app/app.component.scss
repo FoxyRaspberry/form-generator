@@ -4,10 +4,34 @@
 }
 
 .app-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   height: 100%;
   font-family: "Dela Gothic One", sans-serif;
   font-style: normal;
   font-weight: 400;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.app-navigation-list {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+}
+
+.app-navigation-anchor {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    color: #a64d79;
+  }
+}
+
+.app-navigation-anchor_active {
+  color: #7f235d;
 }
