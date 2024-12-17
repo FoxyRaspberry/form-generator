@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
